@@ -35,14 +35,14 @@ public class No1 {
 
         for (char c : inputArray) {
             if (vowelChars.contains(c)) {
-                // ngecek index terakhirnya di list hasil filter (inputConsonants) konsonan
+                // ngecek index terakhirnya di list hasil filter (inputVowels)
                 int firstAppearIndex = inputVowels.indexOf(c);
                 // jika character belum ada di list maka indexnya bernilai -1, di add saja. s
-                if (firstAppearIndex != -1) {
-                    inputVowels.add(firstAppearIndex + 1, c);
-                } else {
-                    // jika sudah ada atau tidak != -1 maka ditambahin di sebelah index kemunculan terakhirnya
+                if (firstAppearIndex == -1) {
                     inputVowels.add(c);
+                } else {
+                    // jika sudah ada atau firstAppearIndex != -1 maka ditambahin di sebelah index kemunculan terakhirnya
+                    inputVowels.add(firstAppearIndex + 1, c);
                 }
             }
         }
@@ -65,13 +65,13 @@ public class No1 {
 
         for (char c : inputArray) {
             if (consonantChars.contains(c)) {
-                // ngecek index terakhirnya di list hasil filter (inputConsonants) konsonan
+                // ngecek index terakhirnya di list hasil filter (inputConsonants)
                 int appearanceIndex = inputConsonants.indexOf(c);
                 // jika character belum ada di list maka indexnya bernilai -1, di add saja. s
                 if (appearanceIndex == -1) {
                     inputConsonants.add(c);
                 } else {
-                    // jika sudah ada atau tidak != -1 maka ditambahin di sebelah index kemunculan terakhirnya
+                    // jika sudah ada atau != -1 maka ditambahin di sebelah index kemunculan terakhirnya
                     inputConsonants.add(appearanceIndex + 1, c);
                 }
             }
